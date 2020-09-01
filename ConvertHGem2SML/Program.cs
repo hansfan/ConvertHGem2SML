@@ -41,6 +41,7 @@ namespace ConvertHGem2SML
     {
         private string _path = string.Empty;
         private string _baseSECSFilePath = AppDomain.CurrentDomain.BaseDirectory + "HGem.sml";
+        private StreamReader reader;
         public OutputStream(string path)
         {
             this._path = path;
@@ -78,21 +79,33 @@ namespace ConvertHGem2SML
 
                 }
 
-                Assembly asm = Assembly.GetExecutingAssembly();
-                string xmlName = asm.GetName().Name;
-                StreamReader reader = new StreamReader(asm.GetManifestResourceStream(xmlName + ".HGem.sml"));
-                File.AppendAllText (this._path ,  reader.ReadToEnd());
-
-                 
+                if (File.Exists(this._path))
+                {
+                    Assembly asm = Assembly.GetExecutingAssembly();
+                    string xmlName = asm.GetName().Name;
+                    reader = new StreamReader(asm.GetManifestResourceStream(xmlName + ".HGem.sml"));
+                    File.AppendAllText(this._path, reader.ReadToEnd());
+                    reader.Close();
+                    reader.Dispose();
+                }
             }
             catch (IOException ex)
             {
-                Console.WriteLine("Please Check Path or File.");
+                Console.WriteLine("IOException:Please Check Path or File.");
                 Console.WriteLine(ex.ToString());
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                    reader.Dispose();
+                }
+                 
             }
 
             return false;
