@@ -1,0 +1,12 @@
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\bin\Release\Event4SMD.exe.config
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\bin\Release\Event4SMD.exe
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\bin\Release\Event4SMD.pdb
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\obj\Release\Event4SMD.csprojResolveAssemblyReference.cache
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\obj\Release\Event4SMD.exe
+C:\Users\Hans\documents\visual studio 2013\Projects\Event4SMD\Event4SMD\obj\Release\Event4SMD.pdb
+D:\github\Event4SMD_2.0\Event4SMD\bin\Release\Event4SMD.exe.config
+D:\github\Event4SMD_2.0\Event4SMD\obj\Release\Event4SMD.exe
+D:\github\Event4SMD_2.0\Event4SMD\obj\Release\Event4SMD.pdb
+D:\github\Event4SMD_2.0\Event4SMD\bin\Release\Event4SMD.exe
+D:\github\Event4SMD_2.0\Event4SMD\bin\Release\Event4SMD.pdb
+D:\github\Event4SMD_2.0\Event4SMD\obj\Release\Event4SMD.csprojResolveAssemblyReference.cache

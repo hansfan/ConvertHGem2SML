@@ -1,0 +1,6 @@
+D:\github\ConvertHgem2SML\ConvertHGem2SML\bin\Debug\ConvertHGem2SML.exe.config
+D:\github\ConvertHgem2SML\ConvertHGem2SML\bin\Debug\ConvertHGem2SML.exe
+D:\github\ConvertHgem2SML\ConvertHGem2SML\bin\Debug\ConvertHGem2SML.pdb
+D:\github\ConvertHgem2SML\ConvertHGem2SML\obj\Debug\ConvertHGem2SML.csprojResolveAssemblyReference.cache
+D:\github\ConvertHgem2SML\ConvertHGem2SML\obj\Debug\ConvertHGem2SML.exe
+D:\github\ConvertHgem2SML\ConvertHGem2SML\obj\Debug\ConvertHGem2SML.pdb
