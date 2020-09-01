@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 namespace ConvertHGem2SML
 {
@@ -39,6 +40,7 @@ namespace ConvertHGem2SML
     class OutputStream
     {
         private string _path = string.Empty;
+        private string _baseSECSFilePath = AppDomain.CurrentDomain.BaseDirectory + "HGem.sml";
         public OutputStream(string path)
         {
             this._path = path;
@@ -47,9 +49,10 @@ namespace ConvertHGem2SML
 
         private void changeOutputPath()
         {
-            int x = this._path.LastIndexOf('.');
-            this._path = this._path.Substring(0, x) + ".sml";
 
+            //int x = this._path.LastIndexOf('.');
+            //this._path = this._path.Substring(0, x) + ".sml";
+            this._path = Path.ChangeExtension(this._path, ".sml");
         }
 
         public bool outputStream(List<List<string>> content)
@@ -58,8 +61,11 @@ namespace ConvertHGem2SML
             {
                 changeOutputPath();
 
+
+
                 using (StreamWriter writer = new StreamWriter(this._path))
                 {
+
                     foreach (List<string> secsMsg in content)
                     {
                         foreach (string line in secsMsg)
@@ -72,6 +78,12 @@ namespace ConvertHGem2SML
 
                 }
 
+                Assembly asm = Assembly.GetExecutingAssembly();
+                string xmlName = asm.GetName().Name;
+                StreamReader reader = new StreamReader(asm.GetManifestResourceStream(xmlName + ".HGem.sml"));
+                File.AppendAllText (this._path ,  reader.ReadToEnd());
+
+                 
             }
             catch (IOException ex)
             {
@@ -288,7 +300,7 @@ namespace ConvertHGem2SML
                         if (index > 0)
                         {
                             tmp = tmp.Substring(0, index).Trim();
-                            
+
                             if (tmp != string.Empty)
                             {
                                 list.Add(tmp);
